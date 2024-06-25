@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import RecipeCard from "./RecipeCard";
 
 function SearchBar() {
   const [textSearch, setTextSearch] = useState("");
   const [foodList, setFoodList] = useState([]);
+  //temporary
+  const [id, setId] = useState()
   useEffect(() => {
     axios
       .get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + textSearch)
@@ -11,6 +14,8 @@ function SearchBar() {
         setFoodList(response.data.meals);
       });
   }, [textSearch]);
+
+ 
 
   return (
     <div>
@@ -20,10 +25,11 @@ function SearchBar() {
         {textSearch &&
           foodList &&
           foodList.map((element) => (
-            <li key={element.idMeal}>{element.strMeal}</li>
+            <button onClick={setId(element.idMeal)} key={element.idMeal}>{element.strMeal}</button>
           ))}
         </ul>
       </span>
+      <RecipeCard id={52772}></RecipeCard>
     </div>
   );
 }
