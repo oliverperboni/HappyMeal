@@ -5,33 +5,41 @@ import RecipeCard from "./RecipeCard";
 function SearchBar() {
   const [textSearch, setTextSearch] = useState("");
   const [foodList, setFoodList] = useState([]);
-  //temporary
-  const [id, setId] = useState()
-  useEffect(() => {
-    axios
-      .get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + textSearch)
-      .then((response) => {
-        setFoodList(response.data.meals);
-      });
-  }, [textSearch]);
+  const [id, setId] = useState(null);
 
- 
+  useEffect(() => {
+    if (textSearch) {
+      axios
+        .get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + textSearch)
+        .then((response) => {
+          setFoodList(response.data.meals || []);
+        });
+    } else {
+      setFoodList([]);
+    }
+  }, [textSearch]);
 
   return (
     <div>
       <span>
-        <input type="text" onChange={(e) => setTextSearch(e.target.value)} />
+        <input
+          type="text"
+          onChange={(e) => setTextSearch(e.target.value)}
+          value={textSearch}
+        />
         <ul>
-        {textSearch &&
-          foodList &&
-          foodList.map((element) => (
-            <button onClick={setId(element.idMeal)} key={element.idMeal}>{element.strMeal}</button>
-          ))}
+          {textSearch &&
+            foodList &&
+            foodList.map((element) => (
+              <button onClick={() => setId(element.idMeal)} key={element.idMeal}>
+                {element.strMeal}
+              </button>
+            ))}
         </ul>
       </span>
-      <RecipeCard id={52772}></RecipeCard>
+      <RecipeCard id={id}></RecipeCard>
     </div>
   );
 }
 
-export default SearchBar
+export default SearchBar;

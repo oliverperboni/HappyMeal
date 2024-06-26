@@ -1,16 +1,26 @@
-import React, { useState } from 'react'
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function RecipeCard(props) {
+  const [item, setItem] = useState(null);
+  const [ingredients, setIngredients] = useState([]);
+  const [instructons, setInstructons] = useState([]);
+  const id = props.id;
 
-  const [item, setItem] = useState([])
-  const [ingredients, setIngredients] = useState([])
-  const id = props.id
-  axios
-    .get("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id)
-    .then((response) => {
-      setItem(response.data.meals);
-    });
+  useEffect(() => {
+    if (id) {
+      axios
+        .get("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id)
+        .then((response) => {
+          const meal = response.data.meals[0];
+          setItem(meal);
+          if (meal) {
+            getIngredients(meal);
+ 
+          }
+        });
+    }
+  }, [id]);
 
   const getIngredients = (meal) => {
     const ingr = [];
@@ -18,27 +28,35 @@ function RecipeCard(props) {
       const ingredient = meal[`strIngredient${i}`];
       const measure = meal[`strMeasure${i}`];
       if (ingredient && ingredient.trim()) {
-        ingr.push(`${measure ? measure : ''} ${ingredient}`.trim());
+        ingr.push(` ${ingredient} - ${measure ? measure : ''}`.trim());
       }
     }
     setIngredients(ingr);
   };
+ 
 
   return (
     <div>
-      {item.forEach(element => (
-        <div key={element.idMeal}>
-          <span>{element.strMeal}</span>
-          <img src={element.strMealThumb}></img>
-          {getIngredients(element)}
-          {ingredients.forEach(ing => (
-            <span>{ing}</span>
-          ))}
-          <span>{element.strInstructions}</span>
+      {item && (
+        <div key={item.idMeal}>
+          <span>{item.strMeal}</span>
+          <br />
+          <img src={item.strMealThumb} alt={item.strMeal}></img>
+          <br />
+          <div>
+            {ingredients.map((ing, index) => (
+              <React.Fragment key={index}>
+                <span>{ing}</span>
+                <br />
+              </React.Fragment>
+            ))}
+          </div>
+          <br />
+          <span>{item.strInstructions}</span><br />
         </div>
-      ))};
+      )}
     </div>
-  )
+  );
 }
 
-export default RecipeCard
+export default RecipeCard;
