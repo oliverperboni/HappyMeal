@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import RecipeCard from "./RecipeCard";
+import "../Css/SearchBar.css"
 
 function SearchBar() {
   const [textSearch, setTextSearch] = useState("");
@@ -21,23 +22,27 @@ function SearchBar() {
 
   return (
     <div>
-      <span>
+      <span className="search-container">
         <input
           type="text"
           onChange={(e) => setTextSearch(e.target.value)}
           value={textSearch}
+          placeholder="Search here"
         />
         <ul>
           {textSearch &&
             foodList &&
             foodList.map((element) => (
-              <button onClick={() => setId(element.idMeal)} key={element.idMeal}>
+              <li> <button className="MealSelect" onClick={() => setId(element.idMeal)} key={element.idMeal}>
                 {element.strMeal}
               </button>
+              </li>
             ))}
         </ul>
       </span>
-      <RecipeCard id={id}></RecipeCard>
+      <div className="RecipeCardContainer">
+      {textSearch && <RecipeCard id={id}></RecipeCard>}
+      </div>
     </div>
   );
 }

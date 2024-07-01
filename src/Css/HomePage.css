@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* body{
+    background-color: rgb(252, 187, 68) ;
+    display: block;
+    text-align: center;
+    justify-content: center; 
+    align-items: center;  
+  
+} */
+body{
+    background-color: rgb(252, 187, 68) ;
+    display: block;
+    text-align: center;
+    justify-content: center; 
+    align-items: center;  
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  
+}
+
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+}

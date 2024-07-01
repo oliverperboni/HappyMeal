@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "../Css/RecipeCard.css";
 
 function RecipeCard(props) {
   const [item, setItem] = useState(null);
@@ -36,14 +37,15 @@ function RecipeCard(props) {
  
 
   return (
-    <div>
+    
+    <div className='RecipeCard'>
       {item && (
         <div key={item.idMeal}>
-          <span>{item.strMeal}</span>
+          <h3>{item.strMeal}</h3>
           <br />
           <img src={item.strMealThumb} alt={item.strMeal}></img>
           <br />
-          <div>
+          <div className='ListIngredients'>
             {ingredients.map((ing, index) => (
               <React.Fragment key={index}>
                 <span>{ing}</span>
@@ -52,7 +54,7 @@ function RecipeCard(props) {
             ))}
           </div>
           <br />
-          <span>{item.strInstructions}</span><br />
+          <article className='Instructions'>{item.strInstructions}</article><br />
         </div>
       )}
     </div>
