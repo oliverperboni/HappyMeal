@@ -33,3 +33,27 @@
 .Instructions {
     text-align: left;
 }
+
+
+.Details-btn {
+    width: 250px;
+    height: 45px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    margin: 5px;
+    border-radius: 25px;
+    border-width: 3px;
+    background-color: white;
+    
+}
+
+.Details-btn:hover{
+    background-color: rgb(247, 206, 118);
+
+}
+
+.Details-btn:active{
+    background-color: rgb(119, 71, 0);
+    color: white;
+
+}

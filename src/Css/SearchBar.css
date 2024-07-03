@@ -20,6 +20,7 @@ input {
 ul{
     list-style: none;
 }
+
 .RecipeCardContainer {
     display: flex;
     justify-content: center;
@@ -28,6 +29,8 @@ ul{
     height: 100%;
 }
 
+
+
 .MealSelect {
     width: 15%;
     height: 50px;
@@ -35,6 +38,18 @@ ul{
     font-family: 'Lato', sans-serif;
     margin: 5px;
     border-radius: 25px;
+    border-width: 3px;
     background-color: white;
     
+}
+
+.MealSelect:hover{
+    background-color: rgb(247, 206, 118);
+
+}
+
+.MealSelect:active{
+    background-color: rgb(119, 71, 0);
+    color: white;
+
 }

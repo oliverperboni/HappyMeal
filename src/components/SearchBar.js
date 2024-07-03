@@ -29,22 +29,26 @@ function SearchBar() {
           value={textSearch}
           placeholder="Search here"
         />
-        <ul>
+        <div className="Grid-elements">
           {textSearch &&
             foodList &&
-            foodList.map((element) => (
-              <li> <button className="MealSelect" onClick={() => setId(element.idMeal)} key={element.idMeal}>
+            foodList.slice(0, 10).map((element) => ( // Limit to 10 items
+              <button
+                className="MealSelect"
+                onClick={() => setId(element.idMeal)}
+                key={element.idMeal}
+              >
                 {element.strMeal}
               </button>
-              </li>
             ))}
-        </ul>
+        </div>
       </span>
       <div className="RecipeCardContainer">
-      {textSearch && <RecipeCard id={id}></RecipeCard>}
+        {textSearch && <RecipeCard id={id}></RecipeCard>}
       </div>
     </div>
   );
 }
 
 export default SearchBar;
+

@@ -1,0 +1,18 @@
+.navbar{
+    background-color: rgb(255, 255, 255);
+    height: 24px;
+    width: 100%;
+    padding-top: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: space-evenly;
+    border-end-end-radius: 25px;
+    border-end-start-radius: 25px;
+}
+
+.nav-item{
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.nav-item a:hover{
+    color: orange;
+}

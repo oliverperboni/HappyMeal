@@ -45,7 +45,8 @@ function RecipeCard(props) {
           <br />
           <img src={item.strMealThumb} alt={item.strMeal}></img>
           <br />
-          <div className='ListIngredients'>
+          <button className='Details-btn'>More details about the recipe</button>
+          {/* <div className='ListIngredients'>
             {ingredients.map((ing, index) => (
               <React.Fragment key={index}>
                 <span>{ing}</span>
@@ -54,7 +55,7 @@ function RecipeCard(props) {
             ))}
           </div>
           <br />
-          <article className='Instructions'>{item.strInstructions}</article><br />
+          <article className='Instructions'>{item.strInstructions}</article><br /> */}
         </div>
       )}
     </div>
