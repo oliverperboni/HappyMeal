@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     background-color: rgb(255, 255, 255);
     height: 24px;
     width: 100%;
@@ -7,12 +7,17 @@
     justify-content: space-evenly;
     border-end-end-radius: 25px;
     border-end-start-radius: 25px;
+    position: sticky; /* Makes the navbar sticky */
+    top: 0; /* Sticks the navbar to the top of the page */
+    z-index: 1000; /* Ensures the navbar stays above other content */
 }
 
-.nav-item{
+.nav-item {
     margin-left: 7px;
     margin-right: 7px;
 }
-.nav-item a:hover{
-    color: orange;
+
+.Link {
+    text-decoration: none;
+    color: black;
 }

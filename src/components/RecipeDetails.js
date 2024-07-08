@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 function RecipeDetails() {
 
-  const [item, setItem] = useState(null);
+  const [item, setItem] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [instructons, setInstructons] = useState([]);
   let { mealId } = useParams()
@@ -29,7 +29,7 @@ function RecipeDetails() {
 
 
   useEffect(() => {
-  if (mealId) {
+    if (mealId) {
       if (mealId) {
         axios
           .get("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealId)
@@ -38,39 +38,38 @@ function RecipeDetails() {
             setItem(meal);
             if (meal) {
               getIngredients(meal);
-  
+
             }
           });
-  
+
       }
     }
-  }, [mealId]);    
+  }, [mealId]);
 
 
   console.log(item);
 
   return (
     <div className='Details'>
-
-      
-        <div key={item.idMeal}>
-          <h3>{item.strMeal}</h3>
-          <br />
-          <img src={item.strMealThumb} alt={item.strMeal}></img>
-          <br />
-          <div className='ListIngredients'>
-            {ingredients.map((ing, index) => (
-              <React.Fragment key={index}>
-                <span>{ing}</span>
-                <br />
-              </React.Fragment>
-            ))}
+      <div key={item.idMeal}>
+        <h3 className='RecipeTitle'>{item.strMeal}</h3>
+        <div className='Content'>
+          <div className='TextContent'>
+            <ul className='ListIngredients'>
+              {ingredients.map((ing, index) => (
+                <li key={index}>{ing}</li>
+              ))}
+            </ul>
+            <article className='Instructions'>{item.strInstructions}</article>
           </div>
-          <br />
-          <article className='Instructions'>{item.strInstructions}</article><br/>
+          <img src={item.strMealThumb} alt={item.strMeal} className='MealImage'></img>
         </div>
+      </div>
     </div>
-  )
+  );
+  
+  
+  
 }
 
 export default RecipeDetails

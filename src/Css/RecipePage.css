@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+.Details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 50px;
+  max-width: 50vw;
+  margin: 0 auto;
+  margin-top: 25px;
+  border: 2px solid black;
+}
+
+.RecipeTitle {
+  background-color: rgba(224, 204, 153, 0.589);
+  font-size: 32px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: fit-content;
+  margin-bottom: 25px;
+  box-shadow: 0 0 30px rgba(224, 204, 153, 0.589);
+}
+
+.Content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
+}
+
+.MealImage {
+  margin-top: 15px;
+  max-width: 500px;
+  height: max-content;
+  border-radius: 10px;
+  margin-left: 20px; /* Adjusted margin to bring the image closer */
+}
+
+.TextContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.ListIngredients {
+  background-color: rgba(211, 204, 186, 0.322);
+  border-radius: 15px;
+  padding: 10px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: justify;
+  width: fit-content;
+  border: 2px solid black;
+}
+
+.ListIngredients li {
+  font-family: "Roboto Mono", monospace;
+  margin-bottom: 5px;
+}
+
+.Instructions {
+  background-color: rgba(211, 204, 186, 0.322);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.356);
+  border-radius: 15px;
+  padding: 10px;
+  width: 20vw;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  margin-top: 10px;
+  border: 2px solid black;
+}
