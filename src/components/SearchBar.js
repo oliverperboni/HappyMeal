@@ -15,6 +15,7 @@ function SearchBar() {
         .then((response) => {
           setFoodList(response.data.meals || []);
         });
+        setId(null)
     } else {
       setFoodList([]);
     }
@@ -43,9 +44,12 @@ function SearchBar() {
             ))}
         </div>
       </span>
+      { id &&
+
       <div className="RecipeCardContainer">
         {textSearch && <RecipeCard id={id}></RecipeCard>}
       </div>
+      }
     </div>
   );
 }
