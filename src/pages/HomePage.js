@@ -2,6 +2,7 @@ import React from "react";
 import SearchBar from "../components/SearchBar";
 import "../Css/HomePage.css"
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 function HomePage() {
 
   return (
@@ -9,6 +10,7 @@ function HomePage() {
       <Header></Header>
       <h1>Home Page</h1>
     <SearchBar></SearchBar>
+      <Footer></Footer>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
+
 body{
     background-color: rgb(252, 187, 68) ;
     display: block;
@@ -17,4 +18,5 @@ body{
 h1{
     font-family: 'Courier New', Courier, monospace;
 }
+
 

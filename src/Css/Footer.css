@@ -1,0 +1,14 @@
+.footer {
+    background-color: rgb(255, 255, 255);
+    font-family: "Courier New", Courier, monospace;
+    justify-content: space-evenly;
+    border-start-end-radius: 25px;
+    border-start-start-radius: 25px;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+   
+  
+  }
+  
