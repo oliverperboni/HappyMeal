@@ -1,18 +1,14 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect ,useRef} from 'react';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 
-
 function RecipeDetails() {
-
   const [item, setItem] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [instructons, setInstructons] = useState([]);
-  let { mealId } = useParams()
-
-
-
+  let { mealId } = useParams();
+  const linkRef = useRef(null);
   const getIngredients = (meal) => {
     const ingr = [];
     for (let i = 1; i <= 20; i++) {
@@ -25,29 +21,19 @@ function RecipeDetails() {
     setIngredients(ingr);
   };
 
-
-
-
   useEffect(() => {
     if (mealId) {
-      if (mealId) {
-        axios
-          .get("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealId)
-          .then((response) => {
-            const meal = response.data.meals[0];
-            setItem(meal);
-            if (meal) {
-              getIngredients(meal);
-
-            }
-          });
-
-      }
+      axios
+        .get("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealId)
+        .then((response) => {
+          const meal = response.data.meals[0];
+          setItem(meal);
+          if (meal) {
+            getIngredients(meal);
+          }
+        });
     }
   }, [mealId]);
-
-
-  console.log(item);
 
   return (
     <div className='Details'>
@@ -62,14 +48,21 @@ function RecipeDetails() {
             </ul>
             <article className='Instructions'>{item.strInstructions}</article>
           </div>
-          <img src={item.strMealThumb} alt={item.strMeal} className='MealImage'></img>
+          <div className='ImageContainer'>
+            <img src={item.strMealThumb} alt={item.strMeal} className='MealImage' />
+            <button
+              className="VideoButton"
+            >
+            <a className='YoutubeLink' ref={linkRef} href={item.strYoutube}>Youtube Video of the Recipe {item.strMeal}</a>
+            </button>
+
+    
+          </div>
         </div>
       </div>
     </div>
   );
-  
-  
-  
 }
 
-export default RecipeDetails
+export default RecipeDetails;
+
