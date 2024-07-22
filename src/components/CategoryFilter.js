@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../Css/CategoryPage.css'; // Import the CSS file
 
 function CategoryFilter(props) {
   const [categories, setCategories] = useState([]);
@@ -16,11 +17,13 @@ function CategoryFilter(props) {
   }, []); // Empty array ensures this runs only once when the component mounts
 
   return (
-    <div>
+    <div className='CategoryFilter'>
       <h1>Categories</h1>
       <ul>
         {categories.map((cat, idx) => (
-          <li key={idx}>{cat.strCategory}</li>
+          <li key={idx}>
+            <button className='CategoryButton'>{cat.strCategory}</button>
+          </li>
         ))}
       </ul>
     </div>
