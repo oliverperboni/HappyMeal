@@ -1,3 +1,4 @@
+import CategoryPage from "./pages/CategoryPage";
 import HomePage from "./pages/HomePage";
 import RecipePage from "./pages/RecipePage"
 import React from 'react';
@@ -11,6 +12,7 @@ function App() {
        <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/details/:mealId" element={<RecipePage />} />
+        <Route path="/category" element={<CategoryPage />} />
       </Routes>
     </div>
     // <div className="App">
