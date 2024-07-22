@@ -45,6 +45,6 @@
 }
 
 .CategoryButton:hover {
-  background-color: rgba(211, 204, 186, 0.5);
+ background-color: rgb(247, 206, 118);
   transform: scale(1.05);
 }

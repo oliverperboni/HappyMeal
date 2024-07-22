@@ -8,7 +8,7 @@ function HomePage() {
   return (
     <div>
       <Header></Header>
-      <h1>Home Page</h1>
+      <h1>Welcome to My Happy Meal</h1>
     <SearchBar></SearchBar>
       <Footer></Footer>
     </div>
