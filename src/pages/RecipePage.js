@@ -12,7 +12,7 @@ function RecipePage() {
     <div>
       <Header></Header>
       <RecipeDetails></RecipeDetails>
-      <Footer></Footer>
+    
       </div>
   )
 }

@@ -8,7 +8,7 @@ function CategoryPage() {
     <div>
       <Header></Header>
       <CategoryFilter></CategoryFilter>
-      <Footer></Footer>
+ 
     </div>
 
   )
