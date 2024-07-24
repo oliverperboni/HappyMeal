@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import '../Css/CategoryPage.css'; // Import the CSS file
+import { Link, } from "react-router-dom";
 
 function CategoryFilter(props) {
   const [categories, setCategories] = useState([]);
@@ -11,6 +12,7 @@ function CategoryFilter(props) {
         setCategories(response.data.meals);
       });
   }
+  
 
   useEffect(() => {
     getCategory();
@@ -22,7 +24,7 @@ function CategoryFilter(props) {
       <ul>
         {categories.map((cat, idx) => (
           <li key={idx}>
-            <button className='CategoryButton'>{cat.strCategory}</button>
+            <Link to={`/Foods/${cat.strCategory}`}><button className='CategoryButton'>{cat.strCategory}</button></Link> 
           </li>
         ))}
       </ul>

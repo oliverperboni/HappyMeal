@@ -9,7 +9,7 @@
 
 .RecipeCard img {
     max-width: 100%;
-    height: auto;
+    height: 200px;
     border-radius: 10px;
 }
 
@@ -23,8 +23,8 @@
 
 
 .Details-btn {
-    width: 250px;
-    height: 45px;
+    width: fit-content;
+    height: min-content;
     font-size: 14px;
     font-family: 'Lato', sans-serif;
     margin: 5px;
