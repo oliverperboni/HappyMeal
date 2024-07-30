@@ -1,9 +1,8 @@
 import React from 'react'
 import { useState, useEffect ,useRef} from 'react';
 import axios from 'axios';
-import "../Css/RecipePage.css"
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+import RecipeDetails from '../components/RecipeDetails';
 
 function RandomPage() {
 
@@ -39,7 +38,7 @@ function RandomPage() {
     return (
         <>
     <Header></Header>
-      <div className='Details'>
+      {/* <div className='Details'>
         <div key={item.idMeal}>
           <h3 className='RecipeTitle'>{item.strMeal}</h3>
           <div className='Content'>
@@ -63,8 +62,8 @@ function RandomPage() {
             </div>
           </div>
         </div>
-      </div>
-
+      </div> */}
+      <RecipeDetails id={item.idMeal} ></RecipeDetails>
       </>
     );
 }

@@ -2,12 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 
-function RecipeDetails() {
+function RecipeDetails(props) {
   const [item, setItem] = useState({});
   const [ingredients, setIngredients] = useState([]);
   const linkRef = useRef(null);
   let { mealId } = useParams();
 
+  if(mealId === undefined){
+    mealId = props.id
+  }
   const getIngredients = (meal) => {
     const ingr = [];
     for (let i = 1; i <= 20; i++) {
