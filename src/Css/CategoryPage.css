@@ -21,7 +21,7 @@
 }
 
 .CategoryFilter ul {
-  list-style-type: none; /* Remove default list styling */
+  list-style-type: none; 
   padding-left: 0; 
   font-family: "Roboto Mono", monospace;
   width: fit-content;
@@ -53,9 +53,10 @@
 .recipe-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px; /* Adjust the gap between grid items as needed */
-  padding: 16px; /* Optional: Add padding around the grid */
+  gap: 16px; 
+  padding: 16px; 
 }
+
 
 
 

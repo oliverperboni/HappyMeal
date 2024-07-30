@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-/* 
-*{
-    text-align: center;
-    justify-content: center; 
-    align-items: center;  
-} */
-
 
 input {
     width: 25%;
@@ -46,7 +39,7 @@ ul{
 
 .MealSelect:hover{
     background-color: rgb(247, 206, 118);
-    transform: scale(1.05);
+    transform: scale(1.05); 
 
 }
 
