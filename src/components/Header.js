@@ -6,7 +6,7 @@ function Header() {
     <nav className='navbar'> 
       <Link className='Link' to={"/"}><span className='nav-item'>Home page</span></Link>-
       <Link className='Link' to={"/category"}><span className='nav-item'><a>By Category</a></span></Link>-
-      <Link className='Link' to={"/"}><span className='nav-item'><a>Favorites</a></span></Link>-
+      <Link className='Link' to={"/Favorites"}><span className='nav-item'><a>Favorites</a></span></Link>-
       <Link className='Link' to={"/random"}><span className='nav-item'><a>Random Recipe</a></span></Link>
     </nav>
   )

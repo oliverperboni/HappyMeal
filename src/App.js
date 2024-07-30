@@ -1,5 +1,6 @@
 import CategoryFoodsPage from "./pages/CategoryFoodsPage";
 import CategoryPage from "./pages/CategoryPage";
+import FavoritesPage from "./pages/FavoritesPage";
 import HomePage from "./pages/HomePage";
 import RandomPage from "./pages/RandomPage";
 import RecipePage from "./pages/RecipePage"
@@ -17,6 +18,7 @@ function App() {
         <Route path="/category" element={<CategoryPage />} />
         <Route path="/random" element={<RandomPage />} />
         <Route path="/Foods/:catStr" element={<CategoryFoodsPage />} />
+        <Route path="/Favorites" element={<FavoritesPage />} />
       </Routes>
     </div>
   );
